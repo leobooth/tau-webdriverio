@@ -68,6 +68,14 @@ export const config: Options.Testrunner = {
     // clientHints/mobile: should the browser request a mobile or desktop resource version?
     capabilities: [{
         browserName: 'chrome',
+        "wdio:chromedriverOptions": {
+            deviceMetrics: {
+                mobile: false
+            },
+            clientHints: {
+                mobile: false
+            }
+        }
     }],
 
     //
