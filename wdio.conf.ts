@@ -67,8 +67,10 @@ export const config: Options.Testrunner = {
     // deviceMetrics/mobile: should ChromeDriver act as a mobile userAgent?
     // clientHints/mobile: should the browser request a mobile or desktop resource version?
     capabilities: [{
+        // @ts-ignore
         browserName: 'chrome',
         "wdio:chromedriverOptions": {
+            // @ts-ignore
             deviceMetrics: {
                 mobile: false
             },
