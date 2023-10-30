@@ -10,6 +10,18 @@ describe('My Login application', () => {
         await expect(SecurePage.flashAlert).toBeExisting();
         await expect(SecurePage.flashAlert).toHaveTextContaining(
             'You logged into a secure area!');
+        await expect(browser).toHaveUrl("https://the-internet.herokuapp.com/secure");
+        await expect(browser).toHaveUrlContaining("secure");
+        await expect(browser).toHaveTitle("The Internet");
+    });
+
+    it('should login to secure page', async ()=> {
+        await LoginPage.open();
+        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
+        await expect(browser).toHaveUrl("https://the-internet.herokuapp.com/secure");
+        await expect(browser).toHaveUrlContaining("secure");
+        await expect(browser).toHaveTitle("The Internet");
     })
-})
+});
+
 
